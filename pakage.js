@@ -1,5 +1,5 @@
 {
-    "name": "team-profile-generator",
+    "name": "lets-go-team",
     "version": "1.0.0",
     "description": "app to create team profile generator ",
     "main": "index.js",
@@ -11,14 +11,14 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/nicolewallace09/team-profile-generator.git"
+      "url": "git+https://github.com/fbenjaminmorris/lets-go-team.git"
     },
     "author": "Nicole Wallace",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/nicolewallace09/team-profile-generator/issues"
+      "url": "https://github.com/fbenjaminmorris/lets-go-team.git/issues"
     },
-    "homepage": "https://github.com/nicolewallace09/team-profile-generator#readme",
+    "homepage": "https://github.com/fbenjaminmorris/lets-go-team.git#readme",
     "devDependencies": {
       "jest": "^26.0.1"
     },
@@ -26,4 +26,3 @@
       "inquirer": "^7.1.0"
     }
   }
-  © 2021 GitHub, Inc.
