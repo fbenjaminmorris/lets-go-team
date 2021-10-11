@@ -1,15 +1,15 @@
-// link to page creation
-const generateHTML = require('./src/generateHTML');
+const mysql = require("mysql");
+const inquirer = require("inquirer");
+require("console.table");
+// const sql = require("./sql");
 
-// team profiles
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern'); 
-
-// node modules 
-const fs = require('fs'); 
-const inquirer = require('inquirer');
-
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "Ledger3691!",
+  database: "employeesDB"
+});
 // team array
 const teamArray = []; 
 
