@@ -1,28 +1,28 @@
 {
   "name": "lets-go-team",
   "version": "1.0.0",
-  "description": "app to create team profile generator ",
+  "description": "TRack your team using MYSSQL and NODE.",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fbenjaminmorris/lets-go-team.git"
   },
-  "author": "Nicole Wallace",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fbenjaminmorris/lets-go-team.git/issues"
   },
   "homepage": "https://github.com/fbenjaminmorris/lets-go-team.git#readme",
-  "devDependencies": {
-    "jest": "^26.0.1"
-  },
   "dependencies": {
-    "inquirer": "^7.1.0"
-  }
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {}
 }
