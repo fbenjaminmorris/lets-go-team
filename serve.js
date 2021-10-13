@@ -258,7 +258,7 @@ function firstPrompt() {
     });
   }
   
-  // User choose the employee list, then employee is deleted
+  
   function promptDelete(deleteEmployeeChoices) {
   
     inquirer
@@ -273,7 +273,7 @@ function firstPrompt() {
       .then(function (answer) {
   
         var query = `DELETE FROM employee WHERE ?`;
-        // when finished prompting, insert a new item into the db with that info
+        
         connection.query(query, { id: answer.employeeId }, function (err, res) {
           if (err) throw err;
   
@@ -314,4 +314,62 @@ function firstPrompt() {
       
           roleArray(employeeChoices);
         });
+      }
+
+      function roleArray(employeeChoices) {
+        console.log("Updating an role");
+      
+        var query =
+          `SELECT r.id, r.title, r.salary 
+        FROM role r`
+        let roleChoices;
+      
+        connection.query(query, function (err, res) {
+          if (err) throw err;
+      
+          roleChoices = res.map(({ id, title, salary }) => ({
+            value: id, title: `${title}`, salary: `${salary}`      
+          }));
+      
+          console.table(res);
+          console.log("roleArray to Update!\n")
+      
+          promptEmployeeRole(employeeChoices, roleChoices);
+        });
+      }
+      
+      function promptEmployeeRole(employeeChoices, roleChoices) {
+      
+        inquirer
+          .prompt([
+            {
+              type: "list",
+              name: "employeeId",
+              message: "Which employee do you want to set with the role?",
+              choices: employeeChoices
+            },
+            {
+              type: "list",
+              name: "roleId",
+              message: "Which role do you want to update?",
+              choices: roleChoices
+            },
+          ])
+          .then(function (answer) {
+      
+            var query = `UPDATE employee SET role_id = ? WHERE id = ?`
+            
+            connection.query(query,
+              [ answer.roleId,  
+                answer.employeeId
+              ],
+              function (err, res) {
+                if (err) throw err;
+      
+                console.table(res);
+                console.log(res.affectedRows + "Updated successfully!");
+      
+                firstPrompt();
+              });
+          });
       }
