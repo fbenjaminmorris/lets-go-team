@@ -1,28 +1,27 @@
 {
-  "name": "lets-go-team",
+  "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "TRack your team using MYSSQL and NODE.",
-  "main": "index.js",
+  "description": "Unit 10 homework",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fbenjaminmorris/lets-go-team.git"
+    "url": "git+https://github.com/fbenjaminmorris/lets-go-team"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fbenjaminmorris/lets-go-team.git/issues"
+    "url": "https://github.com/fbenjaminmorris/lets-go-team/issues"
   },
-  "homepage": "https://github.com/fbenjaminmorris/lets-go-team.git#readme",
+  "homepage": "https://github.com/fbenjaminmorris/lets-go-team#readme",
   "dependencies": {
-    "console.table": "^0.10.0",
-    "inquirer": "^7.3.3",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5"
-  },
-  "devDependencies": {}
+    "inquirer": "^7.0.0",
+    "jest": "^24.9.0"
+  }
 }
